@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\Menu;
-use App\Http\Requests\StoreMenuRequest;
-use App\Http\Requests\UpdateMenuRequest;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
-class MenuController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +14,7 @@ class MenuController extends Controller
      */
     public function index()
     {
-        return view('admin.menus.index');
+        //
     }
 
     /**
@@ -31,10 +30,10 @@ class MenuController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreMenuRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreMenuRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -42,10 +41,10 @@ class MenuController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Menu  $menu
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Menu $menu)
+    public function show($id)
     {
         //
     }
@@ -53,10 +52,10 @@ class MenuController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Menu  $menu
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Menu $menu)
+    public function edit($id)
     {
         //
     }
@@ -64,11 +63,11 @@ class MenuController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateMenuRequest  $request
-     * @param  \App\Models\Menu  $menu
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateMenuRequest $request, Menu $menu)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -76,10 +75,10 @@ class MenuController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Menu  $menu
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Menu $menu)
+    public function destroy($id)
     {
         //
     }

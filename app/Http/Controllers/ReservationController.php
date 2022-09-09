@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Menu;
-use App\Http\Requests\StoreMenuRequest;
-use App\Http\Requests\UpdateMenuRequest;
+use App\Models\Reservation;
+use App\Http\Requests\StoreReservationRequest;
+use App\Http\Requests\UpdateReservationRequest;
 
-class MenuController extends Controller
+class ReservationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class MenuController extends Controller
      */
     public function index()
     {
-        return view('admin.menus.index');
+        return view('admin.reservation.index');
     }
 
     /**
@@ -31,10 +31,10 @@ class MenuController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreMenuRequest  $request
+     * @param  \App\Http\Requests\StoreReservationRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreMenuRequest $request)
+    public function store(StoreReservationRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class MenuController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Menu  $menu
+     * @param  \App\Models\Reservation  $reservation
      * @return \Illuminate\Http\Response
      */
-    public function show(Menu $menu)
+    public function show(Reservation $reservation)
     {
         //
     }
@@ -53,10 +53,10 @@ class MenuController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Menu  $menu
+     * @param  \App\Models\Reservation  $reservation
      * @return \Illuminate\Http\Response
      */
-    public function edit(Menu $menu)
+    public function edit(Reservation $reservation)
     {
         //
     }
@@ -64,11 +64,11 @@ class MenuController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateMenuRequest  $request
-     * @param  \App\Models\Menu  $menu
+     * @param  \App\Http\Requests\UpdateReservationRequest  $request
+     * @param  \App\Models\Reservation  $reservation
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateMenuRequest $request, Menu $menu)
+    public function update(UpdateReservationRequest $request, Reservation $reservation)
     {
         //
     }
@@ -76,10 +76,10 @@ class MenuController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Menu  $menu
+     * @param  \App\Models\Reservation  $reservation
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Menu $menu)
+    public function destroy(Reservation $reservation)
     {
         //
     }
