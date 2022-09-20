@@ -28,7 +28,7 @@
                                         </th>
                                         <th scope="col"
                                             class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
-                                            Description
+                                            Price
                                         </th>
                                         <th scope="col" class="relative py-3 px-6">
                                             <span class="sr-only">Edit</span>
@@ -49,7 +49,7 @@
                                             </td>
                                             <td
                                                 class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                {{ $menu->description }}
+                                                {{ $menu->price }}
                                             </td>
                                             <td
                                                 class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
@@ -57,7 +57,7 @@
                                                     <a href="{{ route('admin.menus.edit', $menu->id) }}"
                                                         class="px-4 py-2 bg-green-500 hover:bg-green-700 rounded-lg  text-white">Edit</a>
                                                     <form
-                                                        class="px-4 py-2 bg-red-500 hover:bg-red-700 rounded-lg text-white"
+                                                        class="px-4 py-2 bg-red-500 hover:bg-red-700 rounded-lg text-white" 
                                                         method="POST"
                                                         action="{{ route('admin.menus.destroy', $menu->id) }}"
                                                         onsubmit="return confirm('Are you sure?');">
