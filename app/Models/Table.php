@@ -13,7 +13,7 @@ class Table extends Model
 
     protected $fillable = ['name', 'guest_number', 'status', 'location'];
 
-    protected $cast = [
+    protected $casts = [
         'status' => TableStatus::class,
         'location' => TableLocation::class
     ];
