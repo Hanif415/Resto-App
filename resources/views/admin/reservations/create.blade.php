@@ -12,7 +12,7 @@
                     class="px-4 py-2 bg-indigo-500 hover:bg-indigo-700 rounded-lg text-white">Reservations Index</a>
             </div>
             <div class="m-2 p-2 bg-slate-100 rounded">
-                <div class="space-y-8 divide-y divide-gray-200 w-1/2 mt-10">
+                <div class="space-y-8 divide-y divide-gray-200 mt-10">
                     <form method="POST" action="{{ route('admin.reservations.store') }}" enctype="multipart/form-data">
                         @csrf
                         <div class="sm:col-span-6">
@@ -38,8 +38,8 @@
                         <div class="sm:col-span-6">
                             <label for="email" class="block text-sm font-medium text-gray-700"> Email </label>
                             <div class="mt-1">
-                                <input type="file" id="email" name="email"
-                                    class="block w-full appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('email') @enderror" />
+                                <input type="text" id="email" name="email"
+                                class="block w-full appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('email') @enderror" />
                             </div>
                             @error('email')
                                 <div class="text-sm text-red-400">{{ $message }}</div>
@@ -48,8 +48,8 @@
                         <div class="sm:col-span-6 pt-5">
                             <label for="tel_number" class="block text-sm font-medium text-gray-700">Telephone Number</label>
                             <div class="mt-1">
-                                <textarea id="tel_number" rows="3" name="tel_number"
-                                    class="shadow-sm focus:ring-indigo-500 appearance-none bg-white border py-2 px-3 text-base leading-normal transition duration-150 ease-in-out focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md @error('tel_number') @enderror"></textarea>
+                                <input type="text" id="tel_number" name="tel_number"
+                                class="block w-full appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('tel_number') @enderror" />
                             </div>
                             @error('tel_number')
                                 <div class="text-sm text-red-400">{{ $message }}</div>
@@ -57,10 +57,8 @@
                         </div>
                         <div class="sm:col-span-6 pt-5">
                             <label for="res_date" class="block text-sm font-medium text-gray-700">Reservation Date</label>
-                            <div class="mt-1">
-                                <textarea id="res_date" rows="3" name="res_date"
-                                    class="shadow-sm focus:ring-indigo-500 appearance-none bg-white border py-2 px-3 text-base leading-normal transition duration-150 ease-in-out focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md @error('res_date') @enderror"></textarea>
-                            </div>
+                            <input type="datetime-local" id="res_date" name="res_date"
+                            class="block w-full appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('res_date') @enderror" />
                             @error('res_date')
                                 <div class="text-sm text-red-400">{{ $message }}</div>
                             @enderror
@@ -68,17 +66,17 @@
                         <div class="sm:col-span-6 pt-5">
                             <label for="guest_number" class="block text-sm font-medium text-gray-700">Guest Number</label>
                             <div class="mt-1">
-                                <textarea id="guest_number" rows="3" name="guest_number"
-                                    class="shadow-sm focus:ring-indigo-500 appearance-none bg-white border py-2 px-3 text-base leading-normal transition duration-150 ease-in-out focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md @error('guest_number') @enderror"></textarea>
+                                <input type="text" id="guest_number" name="guest_number"
+                                class="block w-full appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('guest_number') @enderror" />
                             </div>
                             @error('guest_number')
                                 <div class="text-sm text-red-400">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="sm:col-span-6 pt-5">
-                            <label for="table" class="block text-sm font-medium text-gray-700">Table</label>
+                            <label for="table_id" class="block text-sm font-medium text-gray-700">Table</label>
                             <div class="mt-1">
-                                <select id="table" name="table[]" class="form-multiselect block w-full mt-1">
+                                <select id="table_id" name="table_id" class="form-multiselect block w-full mt-1">
                                     @foreach ($tables as $table)
                                         <option value="{{ $table->id }}">{{ $table->name }}</option>
                                     @endforeach   

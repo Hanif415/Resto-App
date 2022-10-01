@@ -24,11 +24,23 @@
                                         </th>
                                         <th scope="col"
                                             class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
-                                            Image
+                                            Email
                                         </th>
                                         <th scope="col"
                                             class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
-                                            Description
+                                            Phone Number
+                                        </th>
+                                        <th scope="col"
+                                            class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                                            Table
+                                        </th>
+                                        <th scope="col"
+                                            class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                                            Guest
+                                        </th>
+                                        <th scope="col"
+                                            class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                                            Date
                                         </th>
                                         <th scope="col" class="relative py-3 px-6">
                                             <span class="sr-only">Edit</span>
@@ -40,23 +52,34 @@
                                         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                                             <td
                                                 class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                {{ $reservation->name }}
+                                                {{ $reservation->first_name }} {{ $reservation->last_name }}
                                             </td>
                                             <td
                                                 class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                <img src="{{ Storage::url($reservation->image) }}"
-                                                    class="w-16 h-16 rounded">
+                                                {{ $reservation->email }}
                                             </td>
                                             <td
                                                 class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                {{ $reservation->description }}
+                                                {{ $reservation->tel_number }}
+                                            </td>
+                                            <td
+                                                class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                {{ $reservation->table->name }}
+                                            </td>
+                                            <td
+                                                class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                {{ $reservation->guest_number }}
+                                            </td>
+                                            <td
+                                            class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                {{ $reservation->res_date }}
                                             </td>
                                             <td
                                                 class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                                 <div class="flex space-x-2">
                                                     <a href="{{ route('admin.reservations.edit', $reservation->id) }}"
                                                         class="px-4 py-2 bg-green-500 hover:bg-green-700 rounded-lg  text-white">Edit</a>
-                                                    <form
+                                                    {{-- <form
                                                         class="px-4 py-2 bg-red-500 hover:bg-red-700 rounded-lg text-white"
                                                         method="POST"
                                                         action="{{ route('admin.reservations.destroy', $reservation->id) }}"
@@ -64,7 +87,7 @@
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit">Delete</button>
-                                                    </form>
+                                                    </form> --}}
                                                 </div>
                                             </td>
                                         </tr>
